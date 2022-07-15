@@ -52,9 +52,6 @@ const GlobalStyles = createGlobalStyle`
       font-size: ${theme.font.sizes.medium};
     }
   `}
-
-
-
 `
 
 export default GlobalStyles
