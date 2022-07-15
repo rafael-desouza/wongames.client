@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
+import theme from './theme'
 
 const GlobalStyles = createGlobalStyle`
   /* poppins-300 - latin */
@@ -40,17 +41,20 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  html {
-    font-size: 62.5%;
-  }
+  ${({theme}) => css`
+    html {
+      font-size: 62.5%;
+    }
 
-  html, body, #__next {
-    height: 100%;
-  }
 
-  body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-  }
+    body {
+      font-family: ${theme.font.family};
+      font-size: ${theme.font.sizes.medium};
+    }
+  `}
+
+
+
 `
 
 export default GlobalStyles
